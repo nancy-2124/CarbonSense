@@ -1,0 +1,8 @@
+Feature,Importance
+gdp_usd,0.5293335965856273
+population,0.3173901631054411
+energy_use_kgoe_per_capita,0.08043292886669788
+renewable_energy_consumption_pct,0.04229558187617721
+fossil_fuel_energy_pct,0.01606622437857729
+energy_intensity_mj_per_ppp_usd,0.00759347984373547
+renewable_electricity_pct,0.006888025343743758
