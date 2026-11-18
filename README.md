@@ -6,6 +6,12 @@ CarbonSense is a web-based application for analyzing carbon emissions, predictin
 
 The project combines data analytics, machine learning, time-series forecasting, and an interactive React interface.
 
+Live Demo
+
+Live Application: https://carbon-sense-dusky.vercel.app/
+
+GitHub Repository: https://github.com/nancy-2124/CarbonSense
+
 ## Features
 
 - Carbon emission overview dashboard
@@ -48,6 +54,55 @@ The project combines data analytics, machine learning, time-series forecasting, 
 - EDGAR
 - World Bank / WDI indicators
 
+System Architecture
+
+                 ┌─────────────────────┐
+                 │      React UI       │
+                 │      Vite App       │
+                 └──────────┬──────────┘
+                            │
+                         REST API
+                            │
+                            ▼
+                 ┌─────────────────────┐
+                 │     FastAPI         │
+                 │      Backend        │
+                 └──────────┬──────────┘
+                            │
+              ┌─────────────┼─────────────┐
+              │             │             │
+              ▼             ▼             ▼
+        Data Processing   ML Models    Forecasting
+              │             │             │
+              ▼             ▼             ▼
+           Pandas       Random Forest    ARIMA
+              │
+              ▼
+        Carbon Emission
+             Data
+
+Application Pages
+Dashboard
+Provides an overview of carbon emissions, including:
+Total CO₂ emissions
+Average emissions
+Renewable-energy share
+Countries covered
+Historical emission trends
+Country-wise emission comparison
+
+Analysis
+Provides detailed analysis of historical carbon-emission data and country-level trends using interactive visualizations.
+
+Prediction
+Uses machine learning to estimate CO₂ emissions based on selected input features.
+The project includes Random Forest Regression for the primary prediction workflow.
+
+Forecasting
+Uses time-series forecasting to estimate future emission trends for a configurable number of years.
+Sustainability
+Allows users to explore renewable-energy scenarios and observe their potential effect on emission-related outputs.
+
 ## Project Structure
 
 ```text
@@ -80,3 +135,11 @@ CarbonSense/
 │   └── vite.config.js
 │
 └── README.md
+
+
+
+Deployment
+The application is deployed using:
+Frontend: Vercel
+Backend: Render
+The deployed React frontend communicates with the FastAPI backend through the configured API URL.
